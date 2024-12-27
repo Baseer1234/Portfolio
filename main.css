@@ -1,0 +1,417 @@
+@font-face {
+    font-family: 'Futura';
+    src: url('fonts/futura.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Futura', sans-serif;
+    background-color: black;
+    color: #d4d4d4;
+    line-height: 1.6;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    font-size: 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-highlight {
+    color: #ffdc00;
+    font-weight: 600;
+}
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    border: 1px solid #292929;
+    border-radius: 0.5rem;
+    padding: 0;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #d4d4d4;
+    text-decoration: none;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+    color: #ffdc00;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    max-height: 10rem;
+    opacity: 1;
+    padding: 1rem;
+}
+
+.nav-link:hover {
+    color: #ffdc00;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    gap: 2rem;
+}
+
+.intro-text {
+    max-width: 50%;
+    margin-left: 10rem;
+}
+
+.intro-subtitle {
+    font-size: 1.25rem;
+    color: #ffdc00;
+    margin-bottom: 1rem;
+}
+
+.intro-title {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.intro-description {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.intro-image {
+    width: 20rem;
+    height: 20rem;
+    margin-right: 5rem;
+    border-radius: 50px;
+}
+
+.projects-header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem 2rem 2rem;
+}
+
+.projects-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.project-item {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #292929;
+}
+
+.projects-scroll {
+    display: inline-block;
+    font-size: 5rem;
+    font-weight: 600;
+    color: #ffffff;
+    animation: scrollText 5s linear infinite;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.chatwave {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #292929;
+}
+
+.modus {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #292929;
+}
+
+.project-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project-subtitle {
+    font-size: 1.25rem;
+    color: #ffdc00;
+    margin-bottom: 0.5rem;
+}
+
+.project-role {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.klang-project {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+    background-color: black;
+    transition: all 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-top: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+}
+
+.klang-project .project-text {
+    flex: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.klang-project .project-image {
+    position: absolute;
+    right: -50%;
+    top: 50%;
+    transform: translate(150%, -50%);
+    opacity: 0;
+    width: 0;
+    height: auto;
+    transition: opacity 0.5s ease, width 0.5s ease, right 0.5s ease;
+}
+
+.klang-project .project-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.klang-project:hover .project-text {
+    transform: translateX(-150px);
+}
+
+.klang-project:hover .project-image {
+    opacity: 1;
+    width: 300px;
+    right: 50%;
+    transform: translate(150%, -50%);
+}
+
+.project-item:hover {
+    border-top: 0.5px solid #ffdc00;
+    border-bottom: 0.5px solid #ffdc00;
+    overflow: hidden;
+}
+
+.chatwave {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+    background-color: black;
+    transition: all 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-top: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+}
+
+.chatwave .chatwave-text {
+    flex: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.chatwave .project-image {
+    position: absolute;
+    right: -50%;
+    top: 50%;
+    transform: translate(150%, -50%);
+    opacity: 0;
+    width: 0;
+    height: auto;
+    transition: opacity 0.5s ease, width 0.5s ease, right 0.5s ease;
+}
+
+.chatwave .project-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.chatwave:hover .chatwave-text {
+    transform: translateX(-150px);
+}
+
+.chatwave:hover .project-image {
+    opacity: 1;
+    width: 300px;
+    right: 50%;
+    transform: translate(150%, -50%);
+}
+
+.chatwave:hover {
+    border-top: 0.5px solid #ffdc00;
+    border-bottom: 0.5px solid #ffdc00;
+    overflow: hidden;
+}
+
+.modus {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+    background-color: black;
+    transition: all 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-top: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+}
+
+.modus .modus-text {
+    flex: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.modus .project-image {
+    position: absolute;
+    right: -50%;
+    top: 50%;
+    transform: translate(150%, -50%);
+    opacity: 0;
+    width: 0;
+    height: auto;
+    transition: opacity 0.5s ease, width 0.5s ease, right 0.5s ease;
+}
+
+.modus .project-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.modus:hover .modus-text {
+    transform: translateX(-150px);
+}
+
+.modus:hover .project-image {
+    opacity: 1;
+    width: 300px;
+    right: 50%;
+    transform: translate(150%, -50%);
+}
+
+.modus:hover {
+    border-top: 0.5px solid #ffdc00;
+    border-bottom: 0.5px solid #ffdc00;
+    overflow: hidden;
+}
+
+footer {
+    background-color: black;
+    color: #d4d4d4;
+    padding: 2rem 1rem;
+    border-top: 1px solid #292929;
+    font-size: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-quote {
+    flex: 1;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-left: 5rem;
+    text-align: left;
+}
+
+.footer-socials {
+    flex: 0;
+    margin-right: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-link img {
+    width: 32px;
+    height: 32px;
+    filter: invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-link:hover img {
+    transform: scale(1.2);
+    filter: invert(0.8) sepia(1) hue-rotate(45deg);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: -2rem;
+    font-size: 0.875rem;
+    color: #b3b3b3;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-quote {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+}

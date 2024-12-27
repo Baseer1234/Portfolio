@@ -1,0 +1,514 @@
+
+@font-face {
+    font-family: 'Futura';
+    src: url('fonts/futura.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Futura', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: #d4d4d4;
+    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.25rem 2.5rem; 
+    font-size: 1rem; 
+}
+
+.nav-bar {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #d4d4d4;
+    font-size: 1rem;
+    position: relative;
+}
+
+.nav-highlight {
+    color: #ffdc00;
+    font-weight: bold;
+}
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    border: 1px solid #292929;
+    border-radius: 0.5rem;
+    padding: 0; 
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    overflow: hidden;
+    max-height: 0; 
+    opacity: 0; 
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #d4d4d4;
+    text-decoration: none;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+    color: #ffdc00;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    max-height: 10rem; 
+    opacity: 1;
+    padding: 1rem; 
+}
+
+.nav-link:hover{
+    color: #ffdc00;
+}
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 5rem;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem; 
+    font-weight: bold;
+}
+
+.chat {
+    color: #d4d4d4;
+}
+
+.wave {
+    color: #ffdc00;
+}
+
+.hero-text p {
+    margin-top: 1.25rem;
+    max-width: 31.25rem; 
+}
+
+.overview {
+    display: flex;
+    justify-content: space-around;
+    padding: 3.75rem 2.5rem;
+}
+
+.overview div {
+    max-width: 18.75rem; 
+}
+
+h2 {
+    font-size: 1.8rem; 
+}
+
+.highlight {
+    color: #ffdc00;
+}
+
+.issues {
+    padding: 3.75rem 5rem; 
+    background-color: black;
+}
+
+.issues-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.875rem; 
+}
+
+.issues-block, .quote-block {
+    width: 45%; 
+    color: #d4d4d4;
+}
+
+.issues-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem; 
+}
+
+.issues-block p {
+    line-height: 1.6;
+}
+
+.vertical-line {
+    width: 0.02rem; 
+    height: 12.5rem; 
+    background-color: #ffdc00;
+    flex-shrink: 0;
+}
+
+.quote-block blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #d4d4d4;
+    line-height: 1.6;
+}
+
+.cite {
+    font-size: 1rem;
+    color: #d4d4d4;
+    display: block;
+    margin-top: 0.625rem; 
+}
+
+.user-interviews {
+    padding: 3.75rem 5rem;
+}
+
+.user-interviews-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.875rem;
+}
+
+.user-interviews-block {
+    width: 45%;
+    text-align: left;
+}
+
+.user-interviews-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem; 
+}
+
+.user-interviews-block p {
+    line-height: 1.6;
+}
+
+.issues-column {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem; 
+}
+
+.issue h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.625rem; 
+    color: #ffdc00;
+}
+
+.issue p {
+    line-height: 1.6;
+    color: #DDDDDD;
+}
+
+
+section {
+    padding: 3.75rem 5rem;
+}
+
+.highlight {
+    color: #ffdc00;
+}
+
+.opportunity-container{
+    margin-bottom: -15rem;
+}
+
+.challenge-container{
+    margin-bottom:-5rem;
+}
+.opportunity-container,
+.challenge-container,
+.curated-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0rem; 
+}
+.text-right p, .text-left p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d4d4d4;
+}
+
+.labelling, .sorting, .challenges {
+    padding: 3.75rem 5rem;
+}
+
+.labelling-container,
+.sorting-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0rem; 
+}
+
+.text-left, .text-right {
+    flex: 1;
+    max-width: 31.25rem; 
+    color: #d4d4d4;
+}
+
+.text-left h2, .text-right h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem; 
+    color: #ffdc00;
+}
+
+
+.mockup-left img, .mockup-right img {
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+    object-fit: cover; 
+}
+
+.mockup-left, .mockup-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.text-left, .text-right {
+    flex: 1;
+    max-width: 50%; 
+}
+
+.hero-image img {
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .mockup-left img, .mockup-right img {
+        width: 80%; 
+    }
+
+    .text-left, .text-right {
+        max-width: 100%; 
+    }
+
+    .hero-image img {
+        width: 80%; 
+        margin: 0 auto; 
+    }
+}
+
+
+
+.challenges-container {
+    max-width: 43.75rem; 
+    margin: 0 auto;
+    text-align: left;
+}
+
+.challenges-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+    color: #ffdc00;
+}
+
+.challenges-container p {
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    color: #d4d4d4;
+}
+
+
+footer {
+    background-color: black;
+    color: #d4d4d4;
+    padding: 2rem 1rem;
+    border-top: 1px solid #292929;
+    font-size: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-quote {
+    flex: 1;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-left: 3.125rem; 
+    text-align: left;
+}
+
+.footer-socials {
+    flex: 0;
+    margin-right: 1.25rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-link img {
+    width: 2rem; 
+    height: 2rem;
+    filter: invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-link:hover img {
+    transform: scale(1.2);
+    filter: invert(0.8) sepia(1) hue-rotate(45deg);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: -2rem;
+    font-size: 0.875rem;
+    color: #b3b3b3;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+video {
+    width: 100%; 
+    height: auto; 
+    max-height: 400px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+/* For smaller screens (mobile responsiveness) */
+@media screen and (max-width: 768px) {
+    video {
+        max-width: 100%;
+        max-height: 250px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    /* General Styles */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .right-nav span {
+        margin-left: 1rem; 
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem; 
+    }
+
+    .hero-image img {
+        max-width: 80%;
+        margin: 1rem 0;
+    }
+
+    .overview {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .overview div {
+        max-width: 100%; 
+        margin-bottom: 1.5rem;
+    }
+
+    .issues-container,
+    .user-interviews-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .issues-block,
+    .quote-block,
+    .user-interviews-block {
+        width: 100%; 
+        text-align: center;
+    }
+
+    .vertical-line {
+        display: none; 
+    }
+
+    .mockup-left img,
+    .mockup-right img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .mockup-left, .mockup-right {
+        flex-direction: column;
+    }
+
+    .labelling-container,
+    .sorting-container,
+    .curated-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .challenges-container {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .footer-quote {
+        margin-left: 0;
+    }
+
+    .footer-socials {
+        margin-right: 0;
+    }
+}
